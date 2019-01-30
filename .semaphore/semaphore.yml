@@ -62,5 +62,9 @@ blocks:
           - checkout
           - echo "make docker.push"
 promotions:
+  - name: Staging deploy
+    pipeline_file: staging-deploy.yml
+    auto_promote_on:
+      - result: passed
   - name: Production deploy
     pipeline_file: production-deploy.yml
